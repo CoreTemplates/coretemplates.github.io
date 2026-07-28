@@ -1,0 +1,2181 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+        integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <style>
+        .rounded-lg {
+            border-radius: .8rem !important
+        }
+
+        .form-row .owl-carousel [class*=col-] {
+            padding-right: 5px;
+            padding-left: 5px;
+        }
+
+        .page-link:focus,
+        .btn.focus,
+        .btn:focus {
+            box-shadow: none;
+        }
+
+        .custom-control-input:focus:not(:checked)~.custom-control-label::before,
+        .custom-control-input:focus~.custom-control-label::before,
+        .form-control:focus {
+            box-shadow: none;
+            border-color: #999999;
+        }
+
+        .scrollable {
+            overflow: auto;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
+
+        .owl-carousel .owl-nav [class*=owl-] {
+            background: #bbb !important;
+            color: #ffffff !important;
+            width: 30px;
+            height: 30px;
+            line-height: 32px !important;
+            border-radius: 30px;
+            text-align: center;
+        }
+
+        .owl-carousel .owl-nav [class*=owl-]:hover {
+            background: #999;
+            border-radius: 30px;
+            color: #FFF;
+        }
+
+        .owl-carousel .owl-prev,
+        .owl-carousel .owl-next {
+            position: absolute;
+            top: 35%;
+            height: 30px;
+            margin: auto !important;
+        }
+
+        .owl-carousel .owl-prev {
+            left: 0px;
+        }
+
+        .owl-carousel .owl-next {
+            right: 0px;
+        }
+
+        .owl-carousel.brands-carousel .owl-stage,
+        .owl-carousel.products-carousel .owl-stage,
+        .owl-carousel.testimonials-carousel .owl-stage {
+            display: flex;
+        }
+
+        .owl-carousel .item {
+            display: flex;
+            flex: 1 0 auto;
+            height: 100%;
+            justify-content: center;
+        }
+
+        .owl-carousel .item .product-list-item {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .card-product .discount {
+            left: 8px;
+            top: 7px;
+            z-index: 7;
+        }
+
+        .card-product .img-wrap img {
+            object-fit: cover;
+        }
+
+        .block {
+            padding: 20px 0;
+        }
+
+        .block-header {
+            text-align: center;
+        }
+
+        .block-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: #6c757d;
+        }
+
+        .block-subtitle {
+            font-size: 15px;
+            font-weight: 500;
+            color: #6c757d;
+        }
+
+        .block-products {
+            padding-bottom: 0px !important;
+        }
+
+        /* theme */
+        .box-meio {
+            background: #fff;
+            margin-left: -15px;
+            margin-right: -15px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .wrapper .container:last-child .box-meio:last-child {
+            padding-bottom: 50px;
+        }
+
+        .page-title .h4 {
+            padding: 30px 0 30px 0;
+            margin: 0;
+        }
+
+        /* brands carousel <-- */
+        .brands-carousel .owl-stage {
+            display: flex;
+        }
+
+        .brands-carousel .item {
+            display: flex;
+            flex: 1 0 auto;
+            height: 100%;
+            width: 100%;
+        }
+
+        .block-brands .box {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            min-height: 60px;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* brands carousel --> */
+
+        /* desktop */
+        @media (min-width: 991px) {}
+
+        /* mobile */
+        @media (max-width: 990px) {
+            .page-title .h4 {
+                padding: 20px 0 20px 0;
+            }
+
+            .box-meio.bg-transparent {
+                margin: 0;
+            }
+
+            .block .btn {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap-input-spinner@1.10.14/src/bootstrap-input-spinner.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"
+        integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"
+        integrity="sha512-gDWSGGWzTc0mD1P0NwDUsZsSrSyLsC8Mv0I14JtDFJXu2Pgo3ik5Uk1+BqxosbEJU2gDUD6W5DCpn7l29Ah9Ag=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.6/holder.min.js"
+        integrity="sha512-BPbay65HZK0I/A8rKJYm1oLFOUaPUrxOfyx89UMVTpPzuc0uVASMcSk1QokHAuf9nti43BDcrLwappGfJSuJBA=="
+        crossorigin="anonymous"></script>
+    <script>
+        function validarCPF(cpf) {
+
+            cpf = cpf.replace(/[^\d]+/g, '');
+
+            if (cpf == '') return false;
+
+            if (cpf.length != 11 || cpf == "00000000000" || cpf == "11111111111" || cpf == "22222222222" || cpf == "33333333333" || cpf == "44444444444" ||
+                cpf == "55555555555" || cpf == "66666666666" || cpf == "77777777777" || cpf == "88888888888" || cpf == "99999999999")
+                return false;
+
+            add = 0;
+            for (i = 0; i < 9; i++)
+                add += parseInt(cpf.charAt(i)) * (10 - i);
+            rev = 11 - (add % 11);
+            if (rev == 10 || rev == 11)
+                rev = 0;
+            if (rev != parseInt(cpf.charAt(9)))
+                return false;
+
+            add = 0;
+            for (i = 0; i < 10; i++)
+                add += parseInt(cpf.charAt(i)) * (11 - i);
+            rev = 11 - (add % 11);
+            if (rev == 10 || rev == 11)
+                rev = 0;
+            if (rev != parseInt(cpf.charAt(10)))
+                return false;
+
+            return true;
+        }
+
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) === ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) === 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        $(document).ready(function () {
+
+            $(".data").mask("00/00/0000", { clearIfNotMatch: true });
+            $('.cep').mask('00000-000', { clearIfNotMatch: true });
+            $(".cpf").mask("000.000.000-00", { clearIfNotMatch: true });
+            $(".cnpj").mask("00.000.000/0000-00", { clearIfNotMatch: true });
+            $('.valor').mask('000.000.000.000.000,00', { reverse: true });
+            $('.card-expiration-date').mask('00/00');
+            $('.card-number').mask('0000 0000 0000 0000');
+            $('.card-cvv').mask('0000');
+
+            var SPMaskBehavior = function (val) { return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009'; },
+                spOptions = { onKeyPress: function (val, e, field, options) { field.mask(SPMaskBehavior.apply({}, arguments), options); } };
+            $('.telefone').mask(SPMaskBehavior, spOptions);
+
+            // auto scroll to div
+            if ($(".scroll-to-here")[0]) {
+                var $anchor = $('.scroll-to-here').offset();
+                $('html, body').animate({ scrollTop: $anchor.top - 0 }, 1000);
+            }
+
+            $('.show-loading').click(function () {
+                $('.loading').fadeIn();
+            });
+
+            $('form').on('keyup', '.cep', function () {
+                var cep = $(this).val();
+                var url = $(this).attr('url');
+                var $endereco = $(this).parents('.endereco');
+                if (cep != "" && cep.length == 9) {
+                    $.ajax({
+                        type: 'get',
+                        url: url + '/' + cep,
+                        dataType: 'json',
+                        success: function (data) {
+                            if (data.data.bairro != '') {
+                                $endereco.find(".logradouro").val(data.data.logradouro);
+                                $endereco.find(".bairro").val(data.data.bairro);
+                                $endereco.find(".cidade").val(data.data.cidade);
+                                $endereco.find(".uf").val(data.data.uf);
+                                $endereco.find(".numero").focus();
+                            }
+                        }
+                    });
+                }
+            });
+
+            $(".cpf").keyup(function () {
+                cpf = $(this).val().replace(/[^\d]+/g, '');
+                if (cpf.length == 11 && validarCPF($(this).val()) == false) {
+                    alert('O CPF ' + $(this).val() + ' inserido não é válido.')
+                    $(this).val('');
+                }
+            });
+
+            $('.copy-to-clipboard').click(function (e) {
+                e.preventDefault();
+                const el = document.createElement('textarea');
+                document.body.appendChild(el);
+                el.value = $(this).data('text');
+                el.select();
+                el.focus();
+                el.setSelectionRange(0, 99999);
+
+                try {
+                    document.execCommand('copy');
+                    alert('Conteúdo copiado com sucesso');
+                } catch (err) {
+                    alert('Desculpe, seu navegador não copiou o conteúdo.');
+                }
+
+                document.body.removeChild(el);
+            });
+
+            if ($.fn.owlCarousel) {
+                $('.products-carousel').owlCarousel({
+                    loop: false,
+                    margin: 0,
+                    nav: true,
+                    dots: false,
+                    slideBy: 4,
+                    navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
+                    responsive: {
+                        0: {
+                            dots: false,
+                            items: 2
+                        },
+                        600: {
+                            dots: false,
+                            items: 3
+                        },
+                        1000: {
+                            dots: false,
+                            items: 4
+                        }
+                    }
+                });
+
+                $('.brands-carousel').owlCarousel({
+                    loop: false,
+                    nav: true,
+                    margin: 8,
+                    navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
+                    responsive: {
+                        0: {
+                            dots: true,
+                            nav: false,
+                            slideBy: 2,
+                            items: 2
+                        },
+                        600: {
+                            dots: true,
+                            nav: false,
+                            slideBy: 3,
+                            items: 3
+                        },
+                        1000: {
+                            dots: true,
+                            nav: true,
+                            slideBy: 6,
+                            items: 6
+                        }
+                    }
+                });
+            }
+
+        })
+
+    </script>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="canonical" href="https://coretemplates.github.io/temas-loja-virtual-cafes" />
+
+    <link rel="icon" type="image/png" href="https://coretemplates.github.io/favicon-32x32.png">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Titillium Web&display=swap" rel="stylesheet">
+    <style>
+        body,
+        .product-text * {
+            font-family: 'Titillium Web' !important;
+        }
+    </style>
+
+    <style>
+        .fonte-padrao,
+        .btn,
+        .fonte-menu,
+        .fonte-titulo {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+        }
+    </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Titillium Web&display=swap" rel="stylesheet">
+    <style>
+        .fonte-menu {
+            font-family: 'Titillium Web';
+        }
+    </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Titillium Web&display=swap" rel="stylesheet">
+    <style>
+        .fonte-titulo,
+        .block-title {
+            font-family: 'Titillium Web';
+        }
+    </style>
+
+
+    <style>
+        header,
+        header.complete,
+        header.minimal {
+            background-color: #111111 !important;
+        }
+
+        header,
+        header a,
+        header.minimal h1,
+        header.minimal .back-icon a,
+        header .shortcuts .nav-item a {
+            color: #ffffff !important;
+        }
+
+        header.header-156848294 .search-wrap .input-group input,
+        header.header-156848294 .search-wrap .input-group button {
+            color: #ffffff !important;
+        }
+
+        .section-header,
+        .nav-mobile .line-1,
+        .nav-mobile .line-2 {
+            background-color: #111111 !important;
+        }
+
+        .section-header,
+        .section-header a,
+        .nav-mobile .line-1,
+        .nav-mobile .line-1 a,
+        .nav-mobile .line-1 i {
+            color: #ffffff !important;
+        }
+
+        .category-list,
+        .shortcuts-mobile-area {
+            background-color: #ffffff !important;
+        }
+
+        .category-list .item a,
+        .shortcuts-mobile-area,
+        .shortcuts-mobile-area a {
+            color: #212529 !important;
+        }
+
+        .nav-principal,
+        .menu-mobile {
+            background-color: #ffffff !important;
+        }
+
+        .menu-principal li>a.nav-link,
+        .menu-mobile .nav-link,
+        .menu-principal li>a.nav-link:hover,
+        .menu-mobile .nav-link:hover {
+            color: #212529 !important;
+        }
+
+
+
+
+
+        footer,
+        .direitos {
+            background-color: #111111;
+        }
+
+        footer,
+        footer a,
+        footer a:hover,
+        .direitos,
+        .direitos a,
+        .direitos a:hover {
+            color: #ffffff !important;
+        }
+
+        .section-footer,
+        .section-subscribe {
+            background-color: #111111;
+        }
+
+        .section-footer,
+        .section-subscribe,
+        .section-footer a,
+        .section-subscribe a {
+            color: #ffffff !important;
+        }
+    </style>
+
+    <!-- custom css -->
+    <style> </style>
+    <!-- end custom css -->
+
+    <title>Os melhores temas para lojas virtuais de cafés: guia completo - CoreTemplates</title>
+
+    <meta name="description" content="">
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="CoreTemplates" />
+    <meta property="og:title" content="Os melhores temas para lojas virtuais de cafés: guia completo - CoreTemplates" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website" />
+
+
+
+
+
+
+
+
+
+
+
+
+    <script defer="" data-domain="coretemplates.github.io" src="script.js"></script>
+
+    <!-- custom -->
+
+    <!-- end custom -->
+</head>
+
+<body class="internal">
+
+    <div class="loading"><i class="fas fa-spinner fa-3x fa-spin"></i></div>
+
+    <style>
+        .loading {
+            display: none;
+            background: rgba(0, 0, 0, .5);
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            text-align: center;
+            position: fixed;
+            z-index: 9999;
+            color: #fff;
+            text-shadow: 0px 0px 30px #000;
+            padding-top: 200px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css">
+
+    <div class="cookiealert-area">
+        <div class="alert text-center cookiealert rounded" role="alert" style="opacity:0.9;">
+            Ao navegar neste site você aceita o uso de cookies para criar uma melhor experiência de navegação.
+
+            <button type="button" class="btn btn-light btn-sm acceptcookies">
+                Continuar
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
+
+    <style>
+        .cookiealert-area {
+            position: fixed;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 65%;
+            bottom: 15px;
+            z-index: 9999;
+            max-width: 900px;
+        }
+
+        @media (max-width: 990px) {
+            .cookiealert-area {
+                width: 85%;
+            }
+        }
+    </style>
+
+    <div class="zap">
+        <a href="" aria-label="Conversar no WhatsApp" target="_blank"
+            class="box-zap zap-floating-button text-decoration-none">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+    <style>
+        .messenger {
+            right: 85px !important;
+        }
+
+        .zap {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            z-index: 99;
+        }
+
+        .box-zap {
+            width: 60px;
+            height: 60px;
+            background: #23B847;
+            border-radius: 50%;
+            color: #fff !important;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            margin: 2px;
+            padding: 10px;
+            font-size: 34px;
+            text-align: center;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        $(document).ready(function () {
+            $('.banners-topo-carousel').owlCarousel({
+                autoplay: true,
+                animateOut: 'fadeOut',
+                animateIn: 'fadeIn',
+                autoHeight: true,
+                loop: true,
+                margin: 0,
+                dots: false,
+                nav: false,
+                slideBy: 1,
+                items: 1
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+    <header class="section-header d-none d-sm-none d-md-block header-165737185">
+        <section class="header-main pt-4 pt-md-4 pb-md-4">
+            <div class="container">
+                <div class="row d-flex justify-content-between align-items-center">
+
+                    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-3">
+                        <div class="logo text-left">
+                            <a href="https://coretemplates.github.io/">
+                                <h1 class="logo-text">CoreTemplates</h1>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 col-lg-4 col-md-4 col-sm-6">
+                        <form action="https://coretemplates.github.io/produtos" method="get" class="search-wrap">
+                            <div class="input-group w-100">
+                                <input type="text" class="form-control" name="term" value="Buscar produto"
+                                    onfocus="if (this.value === 'Buscar produto' || this.value === 'Search product') this.value = '';">
+                                <div class="input-group-append">
+                                    <button class="btn btn-link" type="submit">
+                                        <i class="bi bi-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-3 pl-sm-0">
+                        <div class="float-none float-sm-right">
+
+
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <div class="nav-mobile d-md-none">
+        <nav class="navbar navbar-light">
+
+            <div class="line-1 px-3">
+                <div class="row no-gutters align-items-center h-100">
+
+                    <div class="col-auto mr-3">
+                        <a href="#" class="open-sidebar" data-section="category" data-from="left">
+                            <div class="icon-wrap">
+                                <i class="bi bi-list"></i>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <div class="logo text-left">
+                            <a href="https://coretemplates.github.io/">
+                                <h1 class="logo-text">CoreTemplates</h1>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-3 text-right">
+                        <div class="d-inline-flex align-items-center">
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="line-2 px-3 pt-1 pb-3">
+                <form action="https://coretemplates.github.io/produtos" method="get" class="search-wrap">
+                    <div class="input-group border">
+                        <input type="text" class="form-control border-0" placeholder="Buscar por produto" name="term"
+                            value="">
+                        <div class="input-group-btn">
+                            <button class="btn" type="submit">
+                                <i class="bi bi-search text-muted"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </nav>
+    </div>
+
+    <style>
+        header a {
+            color: #6c757d;
+        }
+
+        header a:hover {
+            text-decoration: none;
+        }
+
+        header .logo img {
+            max-height: 100px;
+            max-width: 220px;
+        }
+
+        header .icon-wrap i {
+            font-size: 30px;
+            margin-right: 5px;
+        }
+
+        header .cart .icon-wrap i {
+            font-size: 27px;
+            margin-right: 8px;
+        }
+
+        header .cart-counter {
+            border-radius: 50px;
+            display: inline-block;
+            padding: 0.25em 0.4em;
+            margin-left: 0 !important;
+            font-size: 14px;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            font-weight: bold;
+        }
+
+        header .search-wrap .input-group {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        header .search-wrap input {
+            border: none;
+            border-radius: 5px !important;
+            margin: 1px !important;
+        }
+
+        header .search-wrap button {
+            margin: 1px;
+            color: #999;
+        }
+
+        header .social-media-list li {
+            margin-bottom: 0 !important;
+        }
+
+        header .social-media-list a {
+            font-size: 12px;
+        }
+
+
+        /* tablet */
+        @media (max-width: 768px) {
+
+            header.header-3 .text-wrap,
+            header.header-4 .text-wrap,
+            header.header-5 .text-wrap {
+                display: none;
+            }
+        }
+
+        /* mobile */
+        @media (max-width: 768px) {
+
+            html,
+            body {
+                overflow-x: hidden;
+            }
+
+            body.menu-in {
+                overflow: hidden;
+                padding-top: 166px;
+            }
+
+            .nav-mobile nav {
+                padding: 0px;
+            }
+
+            .nav-mobile .logo img {
+                max-height: 80px;
+            }
+
+            .nav-mobile .navbar-toggler {
+                display: block;
+            }
+
+            .nav-mobile .line-1 {
+                height: 100px;
+                width: 100%;
+                overflow: hidden;
+            }
+
+            .nav-mobile .line-1 i {
+                color: #6c757d;
+                font-size: 24px !important;
+                padding: 5px 0;
+            }
+
+            .nav-mobile .logo-text {
+                width: 100%;
+                height: 70px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                color: #6c757d;
+                font-size: 22px;
+            }
+
+            .nav-mobile .cart {
+                position: relative;
+                text-align: right;
+                display: inline-block;
+            }
+
+            .nav-mobile .cart .badge {
+                position: absolute;
+                right: -3px;
+                top: -3px;
+            }
+
+            .nav-mobile a {
+                color: #fff;
+                position: relative;
+            }
+
+            .nav-mobile .line-2 {
+                width: 100%;
+            }
+
+            .nav-mobile .line-2 .btn {
+                background: #fff !important;
+                border: none;
+                width: 36px;
+                height: 36px;
+                padding: 0px;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+
+            .nav-mobile .line-2 .input-group {
+                background: #fff;
+                border-radius: .25rem;
+            }
+        }
+    </style>
+
+
+
+
+    <style>
+        .offcanvas-collapse {
+            position: fixed;
+            top: 0px;
+            z-index: 10;
+            bottom: 0;
+            width: 80%;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            overflow-y: auto;
+            visibility: hidden;
+            background-color: #eee;
+            box-shadow: 3px 0px 25px #666;
+            right: -100%;
+            transition-property: right, visibility;
+            transition-timing-function: ease-in-out;
+            transition-duration: .3s;
+        }
+
+        .offcanvas-collapse.open {
+            right: 0;
+            visibility: visible;
+        }
+
+        .offcanvas-collapse.left {
+            left: -100%;
+            transition-property: left, visibility;
+            right: unset;
+        }
+
+        .offcanvas-collapse.left.open {
+            left: 0;
+            right: unset;
+        }
+
+
+
+        .offcanvas-bg-overlay {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9;
+            opacity: 0.5;
+            display: none;
+            position: fixed;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8.9px);
+            -webkit-backdrop-filter: blur(8.9px);
+        }
+
+
+        /* desktop */
+        @media (min-width: 990px) {
+            .offcanvas-collapse {
+                width: 440px;
+            }
+        }
+    </style>
+
+    <div class="offcanvas-bg-overlay close-sidebar"></div>
+
+    <div class="sidebar py-3 px-4 navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+
+        <div class="sidebar-section sidebar-category">
+            <div class="sidebar-header pb-3">
+                &nbsp;
+
+                <i class="fas fa-times close-button close-sidebar"></i>
+            </div>
+            <div class="sidebar-content">
+                <ul class="navbar-nav ml-auto mt-2 nav-categories-level-1 border-top">
+                </ul>
+
+
+            </div>
+        </div>
+
+        <script>
+            function showNavCategoriesLevel1() {
+                $('.nav-categories-level-2').fadeOut('fast').promise().done(function () {
+                    $('.nav-categories-level-1').fadeIn('fast');
+                });
+            }
+
+            function showNavCategoriesLevel2(id) {
+                $('.nav-categories-level-1').fadeOut('fast').promise().done(function () {
+                    $('.nav-categories-level-2.nav-category-children-' + id).fadeIn();
+                });
+            }
+
+            $(document).ready(function () {
+
+                $('.nav-categories-go-level-1').click(function (e) {
+                    showNavCategoriesLevel1();
+                    e.preventDefault();
+                });
+
+                $('.nav-categories-go-level-2').click(function (e) {
+                    var categoryId = $(this).data('id');
+                    showNavCategoriesLevel2(categoryId);
+                    e.preventDefault();
+                });
+
+            })
+        </script>
+
+        <div class="sidebar-section sidebar-search">
+            <div class="sidebar-header">
+                <h4 class="fonte-titulo">Pesquisar</h4>
+                <i class="fas fa-times close-button close-sidebar"></i>
+            </div>
+            <div class="sidebar-content">
+                <form action="https://coretemplates.github.io/produtos" method="get" class="mt-5">
+                    <div class="form-group">
+                        <label>Buscar produto</label>
+                        <input type="text" class="form-control" name="term">
+                    </div>
+                    <button class="btn btn-primary btn-principal" type="submit">
+                        <i class="fa fa-search"></i> Buscar
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- <div class="sidebar-section sidebar-account">
+    <div class="sidebar-header">
+        <h4 class="fonte-titulo">Minha conta</h4>
+        <i class="fas fa-times close-button close-sidebar"></i>
+    </div>
+    <div class="sidebar-content">
+                    <div class="mt-5">
+                <a href="https://coretemplates.github.io/identificacao#cadastrar" class="btn btn-primary btn-principal d-block mt-4">
+                    Criar minha conta
+                </a>
+                <a href="https://coretemplates.github.io/identificacao#login" class="btn btn-primary btn-principal d-block mt-4">
+                    Já tenho cadastro
+                </a>
+            </div>
+            </div>
+</div> -->
+
+        <div class="sidebar-section sidebar-cart">
+
+            <div class="sidebar-header">
+                <h4 class="fonte-titulo">Carrinho</h4>
+                <i class="fas fa-times close-button close-sidebar"></i>
+            </div>
+
+            <div class="sidebar-content mt-4">
+                <div class="cart">
+
+                    <p>Seu carrinho está vazio.</p>
+
+                </div>
+
+                <style>
+                    .cart .gift-label {}
+
+                    .cart .cart-item.gift {
+                        background-color: #fff;
+                        padding: 10px 10px 8px 10px !important;
+                    }
+
+                    .cart .form-qtd label {
+                        display: block;
+                        width: 100%;
+                        margin-bottom: 2px;
+                    }
+
+                    .cart .spinner-input-sm {
+                        max-width: 120px;
+                    }
+
+                    .cart .price {
+                        color: #777;
+                        font-weight: normal;
+                    }
+
+                    .cart .img-thumbnail {
+                        width: 80px;
+                    }
+
+                    .cart .one-column>div {
+                        max-width: 100%;
+                        flex: 100%;
+                    }
+
+                    .cart .form-qtd label {
+                        display: none;
+                    }
+
+                    .cart .btn-texto {
+                        display: block !important;
+                    }
+
+                    .cart .btn-botao {
+                        display: none;
+                    }
+
+                    .cart .col-price-del {
+                        width: 100%;
+                        max-width: 100%;
+                        margin-left: 0 !important;
+                        flex: 100%;
+                    }
+                </style>
+
+                <script>
+                    $(document).ready(function () {
+
+                        $(".spinner-input-sm").inputSpinner({ groupClass: "input-group-sm" })
+
+                    });
+                </script>
+
+            </div>
+
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $('.show-quote-form').click(function () {
+                    $('.form-quote-area, .qtd-hidden').show();
+                    $('.sidebar-cart .form-edit, .sidebar-cart .delete-column').hide();
+                    $(this).hide();
+                })
+            });
+        </script>
+
+
+    </div>
+
+    <style>
+        .sidebar .nav-link {
+            color: #333;
+            font-size: 18px;
+            display: block;
+            position: relative;
+        }
+
+        .sidebar .dropdown-menu {
+            position: static !important;
+            transform: none !important;
+        }
+
+        .sidebar .dropdown-toggle::after {
+            position: absolute;
+            top: 21px;
+            right: 0;
+            font-size: 18px;
+        }
+
+        .sidebar-header {
+            position: relative;
+        }
+
+        .sidebar-header .close-button {
+            position: absolute;
+            right: 0;
+            cursor: pointer;
+            top: 0px;
+            font-size: 20px;
+            background: #fff;
+            border-radius: 38px;
+            line-height: 35px;
+            width: 35px;
+            height: 35px;
+            text-align: center;
+        }
+
+        .sidebar-header h4 {
+            margin-top: 15px;
+        }
+
+        /* mobile */
+        @media (max-width: 990px) {}
+    </style>
+
+    <script>
+        $(function () {
+            'use strict'
+            $('[data-toggle="offcanvas"]').on('click', function () {
+                $('.offcanvas-collapse').toggleClass('open');
+            });
+        });
+
+        function openSidebar(section) {
+            $('.offcanvas-collapse').removeClass('open');
+            $('.sidebar .sidebar-section').hide();
+            $('.sidebar .sidebar-' + section).show();
+            $('.offcanvas-collapse').addClass('open');
+            $('.offcanvas-bg-overlay').hide().fadeIn('slow');
+            $('html, body').addClass('overflow-hidden');
+        }
+
+        $(document).ready(function () {
+
+            $('.open-sidebar').click(function () {
+                $('.offcanvas-collapse').removeClass('left');
+                if ($(this).data('from') == 'left') {
+                    $('.offcanvas-collapse').addClass('left');
+                }
+                openSidebar($(this).data('section'));
+                return false;
+            });
+
+            $('.close-sidebar').click(function () {
+                $('.offcanvas-collapse').removeClass('open');
+                $('.offcanvas-bg-overlay').fadeOut('slow');
+                $('html, body').removeClass('overflow-hidden');
+                return false;
+            });
+
+
+        });
+    </script>
+
+    <div class="wrapper">
+
+        <div class="container">
+            <div class="box-meio">
+                <div class="page-title">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="h4 fonte-titulo text-center">Os melhores temas para lojas virtuais de cafés: guia completo</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="box-meio">
+
+                <div class="mb-5 pb-5">
+
+                    <div id="conteudo" style="max-width: 600px; margin: 0px auto;">
+                      
+<p>Os temas utilizados em uma loja virtual de cafés desempenham um papel fundamental na forma como os consumidores percebem a marca, conhecem os produtos e avançam durante a jornada de compra.</p>
+
+<p>Além de definirem a aparência do site, os temas influenciam a apresentação dos cafés, a organização das categorias, a descoberta de novos sabores e a facilidade para comparar diferentes origens, torras, métodos de preparo e formatos de venda.</p>
+
+<p>Um layout organizado, visualmente agradável e fácil de navegar ajuda o consumidor a encontrar cafés compatíveis com suas preferências, compreender as características de cada produto e realizar a compra com mais segurança.</p>
+
+<p>Quando informações como intensidade, notas sensoriais, origem, variedade, processo, torra, moagem e método de preparo estão bem distribuídas, o visitante tende a explorar mais produtos e permanecer por mais tempo na loja.</p>
+
+<p>Um bom tema também pode contribuir para o aumento das conversões. Quando o site destaca os produtos, apresenta recomendações relevantes e orienta o consumidor com clareza, a escolha entre cafés em grãos, moídos, cápsulas, kits, assinaturas e acessórios torna-se mais simples.</p>
+
+<p>O tema adequado ajuda ainda a transmitir profissionalismo, valorizar a identidade da torrefação ou cafeteria e criar uma experiência consistente em celulares, tablets e computadores.</p>
+
+<p>Por isso, a escolha não deve considerar apenas a aparência da página inicial. É necessário analisar fatores como velocidade, responsividade, personalização, organização do catálogo, apresentação das informações sensoriais, compatibilidade com a plataforma, recursos para assinaturas, SEO, suporte técnico e frequência de atualizações.</p>
+
+<nav aria-label="Índice do conteúdo">
+  <p><strong>Índice</strong></p>
+
+  <ol>
+    <li>
+      <a href="#o-que-considerar-ao-escolher-um-tema">O que considerar ao escolher um tema para uma loja de cafés?</a>
+
+
+  <ol>
+    <li><a href="#apresentacao-visual-dos-cafes">Apresentação visual dos cafés</a></li>
+    <li><a href="#design-responsivo-e-mobile-first">Design responsivo e mobile first</a></li>
+    <li><a href="#carregamento-rapido">Carregamento rápido</a></li>
+    <li><a href="#organizacao-do-catalogo">Organização do catálogo</a></li>
+    <li><a href="#capacidade-de-personalizacao">Capacidade de personalização</a></li>
+    <li><a href="#compatibilidade-com-recursos">Compatibilidade com recursos e integrações</a></li>
+    <li><a href="#estrutura-otimizada-para-seo">Estrutura otimizada para SEO</a></li>
+    <li><a href="#suporte-e-atualizacoes">Suporte e atualizações</a></li>
+  </ol>
+</li>
+
+<li>
+  <a href="#temas-por-plataforma">Temas para lojas de cafés por plataforma</a>
+
+  <ol>
+    <li>
+      <a href="#temas-para-loja-integrada">Temas para Loja Integrada</a>
+
+      <ol>
+        <li><a href="#torra-artesanal">Torra Artesanal</a></li>
+        <li><a href="#clube-do-cafe">Clube do Café</a></li>
+        <li><a href="#microlotes-premium">Microlotes Premium</a></li>
+        <li><a href="#cafeteria-e-padaria">Cafeteria e Padaria</a></li>
+        <li><a href="#emporio-de-cafes">Empório de Cafés</a></li>
+        <li><a href="#cafe-corporativo">Café Corporativo</a></li>
+        <li><a href="#universo-barista">Universo Barista</a></li>
+      </ol>
+    </li>
+
+    <li>
+      <a href="#temas-para-shopify">Temas para Shopify</a>
+
+      <ol>
+        <li><a href="#shopify-dawn">Dawn</a></li>
+        <li><a href="#shopify-craft">Craft</a></li>
+        <li><a href="#shopify-refresh">Refresh</a></li>
+        <li><a href="#shopify-sense">Sense</a></li>
+        <li><a href="#shopify-horizon">Horizon</a></li>
+        <li><a href="#shopify-heritage">Heritage</a></li>
+        <li><a href="#shopify-atelier">Atelier</a></li>
+      </ol>
+    </li>
+
+    <li>
+      <a href="#temas-para-nuvemshop">Temas para Nuvemshop</a>
+
+      <ol>
+        <li><a href="#nuvemshop-baires">Baires</a></li>
+        <li><a href="#nuvemshop-recife">Recife</a></li>
+        <li><a href="#nuvemshop-morelia">Morelia</a></li>
+        <li><a href="#nuvemshop-ipanema">Ipanema</a></li>
+        <li><a href="#nuvemshop-cali">Cali</a></li>
+        <li><a href="#nuvemshop-rio">Rio</a></li>
+        <li><a href="#nuvemshop-amazonas">Amazonas</a></li>
+      </ol>
+    </li>
+
+    <li>
+      <a href="#temas-para-woocommerce-e-wordpress">Temas para WooCommerce e WordPress</a>
+
+      <ol>
+        <li><a href="#woocommerce-storefront">Storefront</a></li>
+        <li><a href="#woocommerce-astra">Astra</a></li>
+        <li><a href="#woocommerce-oceanwp">OceanWP</a></li>
+        <li><a href="#woocommerce-neve">Neve</a></li>
+        <li><a href="#woocommerce-kadence">Kadence</a></li>
+        <li><a href="#woocommerce-blocksy">Blocksy</a></li>
+        <li><a href="#woocommerce-hello-commerce">Hello Commerce</a></li>
+      </ol>
+    </li>
+  </ol>
+</li>
+
+<li>
+  <a href="#como-personalizar-seu-tema">Como personalizar o tema de uma loja de cafés</a>
+
+  <ol>
+    <li><a href="#ajuste-as-cores">Ajuste as cores à identidade da marca</a></li>
+    <li><a href="#escolha-fontes-legiveis">Escolha fontes legíveis</a></li>
+    <li><a href="#utilize-imagens-de-qualidade">Utilize imagens de qualidade</a></li>
+    <li><a href="#padronize-as-informacoes">Padronize as informações dos cafés</a></li>
+    <li><a href="#organize-os-banners">Organize os banners</a></li>
+    <li><a href="#configure-menus-e-categorias">Configure menus e categorias</a></li>
+    <li><a href="#destaque-informacoes-importantes">Destaque informações importantes</a></li>
+    <li><a href="#integre-aplicativos-e-widgets">Integre aplicativos e widgets com equilíbrio</a></li>
+    <li><a href="#mantenha-a-consistencia-visual">Mantenha a consistência visual</a></li>
+    <li><a href="#evite-o-excesso-de-elementos">Evite o excesso de elementos</a></li>
+  </ol>
+</li>
+
+<li>
+  <a href="#checklist-como-saber-se-o-tema-e-ideal">Checklist: como saber se o tema é ideal?</a>
+
+  <ol>
+    <li><a href="#o-tema-e-responsivo">O tema é responsivo?</a></li>
+    <li><a href="#as-paginas-carregam-rapidamente">As páginas carregam rapidamente?</a></li>
+    <li><a href="#o-visual-combina-com-a-identidade-da-marca">O visual combina com a identidade da marca?</a></li>
+    <li><a href="#a-navegacao-e-simples-e-intuitiva">A navegação é simples e intuitiva?</a></li>
+    <li><a href="#os-cafes-ficam-bem-apresentados">Os cafés ficam bem apresentados?</a></li>
+    <li><a href="#as-informacoes-sensoriais-estao-visiveis">As informações sensoriais estão visíveis?</a></li>
+    <li><a href="#o-tema-e-compativel-com-a-plataforma">O tema é compatível com a plataforma?</a></li>
+    <li><a href="#o-tema-funciona-com-os-aplicativos">O tema funciona com os aplicativos utilizados?</a></li>
+    <li><a href="#existem-opcoes-suficientes-de-personalizacao">Existem opções suficientes de personalização?</a></li>
+    <li><a href="#o-fornecedor-oferece-suporte-tecnico">O fornecedor oferece suporte técnico?</a></li>
+    <li><a href="#o-tema-recebe-atualizacoes">O tema recebe atualizações?</a></li>
+    <li><a href="#a-estrutura-segue-boas-praticas-de-seo">A estrutura segue boas práticas de SEO?</a></li>
+    <li><a href="#o-tema-atende-ao-tamanho-do-catalogo">O tema atende ao tamanho do catálogo?</a></li>
+    <li><a href="#o-processo-de-compra-e-claro">O processo de compra é claro?</a></li>
+    <li><a href="#as-informacoes-importantes-estao-visiveis">As informações comerciais estão visíveis?</a></li>
+  </ol>
+</li>
+
+<li><a href="#conclusao">Conclusão</a></li>
+
+
+  </ol>
+</nav>
+
+<h2 id="o-que-considerar-ao-escolher-um-tema">O que considerar ao escolher um tema para uma loja de cafés?</h2>
+
+<p>Ao selecionar um tema para uma loja virtual de cafés, é importante analisar fatores que favoreçam uma navegação eficiente, uma apresentação envolvente dos produtos e uma experiência de compra adequada ao público da marca.</p>
+
+<p>Cada detalhe pode influenciar a maneira como o consumidor percebe a qualidade dos cafés, compreende suas diferenças e encontra uma opção compatível com o próprio paladar.</p>
+
+<p>A escolha deve considerar o modelo do negócio, o tamanho do catálogo, o perfil dos clientes e os recursos necessários para a operação.</p>
+
+<p>Uma pequena torrefação com poucos microlotes pode funcionar bem com um layout visual, editorial e minimalista. Já um empório com cafés, cápsulas, xaropes, máquinas, filtros e acessórios precisa de categorias organizadas, filtros, busca eficiente e menus mais completos.</p>
+
+<p>Lojas que trabalham com assinaturas também podem precisar de páginas específicas para explicar planos, frequência de entrega, personalização das caixas e benefícios oferecidos aos membros.</p>
+
+<h3 id="apresentacao-visual-dos-cafes">Apresentação visual dos cafés</h3>
+
+<p>No segmento de cafés, a apresentação do produto precisa ir além da fotografia da embalagem.</p>
+
+<p>O tema deve oferecer espaço para exibir informações como país, região, fazenda, altitude, variedade, processo, perfil de torra, notas sensoriais, pontuação, data da torra e métodos de preparo recomendados.</p>
+
+<p>Esses elementos ajudam o cliente a compreender as diferenças entre os produtos e tornam a compra mais educativa, especialmente para consumidores que ainda estão conhecendo o universo dos cafés especiais.</p>
+
+<p>Ícones, tabelas, escalas de intensidade e gráficos sensoriais podem facilitar a leitura, desde que sejam utilizados de maneira simples e consistente.</p>
+
+<p>Também é interessante que o tema permita apresentar imagens dos grãos, da embalagem, da fazenda produtora, do método de preparo e da bebida pronta.</p>
+
+<h3 id="design-responsivo-e-mobile-first">Design responsivo e mobile first</h3>
+
+<p>Um tema responsivo adapta-se a diferentes tamanhos de tela, como celulares, tablets, notebooks e computadores.</p>
+
+<p>Essa adaptação é importante porque textos, imagens, seletores de moagem, opções de peso, menus e botões precisam continuar legíveis e fáceis de utilizar em qualquer dispositivo.</p>
+
+<p>Em uma loja de cafés, o consumidor deve conseguir selecionar o tipo de moagem, escolher o tamanho da embalagem, consultar a data de torra, adicionar produtos ao carrinho e finalizar a compra pelo celular sem dificuldades.</p>
+
+<p>Também é necessário testar recursos como assinatura recorrente, compra de kits, escolha de frequência de entrega e personalização de caixas.</p>
+
+<p>Antes de escolher o tema, acesse a demonstração pelo celular e navegue pelas páginas de categorias, produtos, carrinho, assinatura e finalização da compra.</p>
+
+<h3 id="carregamento-rapido">Carregamento rápido</h3>
+
+<p>O tempo de carregamento influencia diretamente a permanência do consumidor no site.</p>
+
+<p>Temas leves e otimizados tendem a oferecer uma navegação mais fluida, reduzindo as chances de abandono antes que o visitante conheça os cafés disponíveis.</p>
+
+<p>Fotografias de grãos, plantações, métodos de preparo e embalagens são importantes, mas arquivos muito grandes podem deixar a loja lenta.</p>
+
+<p>O excesso de vídeos automáticos, animações, pop-ups e aplicativos também pode prejudicar o desempenho.</p>
+
+<p>Para manter a velocidade, utilize imagens otimizadas, limite recursos decorativos e revise periodicamente os aplicativos instalados.</p>
+
+<p>Uma loja rápida beneficia tanto a experiência do consumidor quanto a visibilidade nos mecanismos de busca.</p>
+
+<h3 id="organizacao-do-catalogo">Organização do catálogo</h3>
+
+<p>A organização do catálogo é especialmente importante para lojas que trabalham com diferentes perfis de café.</p>
+
+<p>O tema deve permitir a criação de categorias e filtros baseados em características relevantes para o consumidor.</p>
+
+<p>É possível organizar os produtos por origem, intensidade, torra, notas sensoriais, processo, método de preparo, tipo de moagem, formato, produtor ou faixa de preço.</p>
+
+<p>Uma pessoa que procura um café para espresso pode ter necessidades diferentes de outra que deseja preparar a bebida na prensa francesa ou no método V60.</p>
+
+<p>Filtros bem planejados ajudam o cliente a encontrar o produto ideal sem precisar abrir dezenas de páginas.</p>
+
+<p>Também podem ser criadas vitrines como “cafés frutados”, “cafés para espresso”, “lançamentos”, “microlotes”, “mais vendidos” e “kits para presente”.</p>
+
+<h3 id="capacidade-de-personalizacao">Capacidade de personalização</h3>
+
+<p>Temas que permitem alterações visuais e estruturais oferecem mais liberdade para adaptar o site à identidade da cafeteria, torrefação ou empório.</p>
+
+<p>É possível modificar cores, fontes, banners, vitrines, botões, ícones, menus e a disposição das informações de cada café.</p>
+
+<p>A personalização ajuda a evitar que a loja tenha uma aparência genérica ou semelhante a outros negócios que utilizam o mesmo modelo.</p>
+
+<p>Marcas com uma proposta artesanal podem priorizar tons naturais, texturas e conteúdos sobre produtores. Cafeterias urbanas podem utilizar uma estética mais contemporânea, enquanto marcas premium podem escolher composições minimalistas e fotografias detalhadas.</p>
+
+<p>Antes de escolher o tema, verifique quais alterações podem ser feitas diretamente pelo painel e quais exigem modificações em código.</p>
+
+<h3 id="compatibilidade-com-recursos">Compatibilidade com recursos e integrações</h3>
+
+<p>O tema precisa ser compatível com a plataforma utilizada e com os recursos necessários para vender cafés pela internet.</p>
+
+<p>Isso inclui meios de pagamento, sistemas de entrega, cálculo de frete, avaliações de clientes, programas de fidelidade, atendimento por WhatsApp e ferramentas de recuperação de carrinho.</p>
+
+<p>Lojas que trabalham com clube de assinatura precisam verificar a compatibilidade com pagamentos recorrentes, renovação automática, escolha de planos e gestão de assinantes.</p>
+
+<p>Também pode ser importante integrar o site a sistemas de gestão de estoque, emissão de notas, rastreamento de pedidos e automação de marketing.</p>
+
+<p>Um tema incompatível pode apresentar erros de exibição, seletores que não funcionam, páginas desconfiguradas ou dificuldades durante a finalização da compra.</p>
+
+<h3 id="estrutura-otimizada-para-seo">Estrutura otimizada para SEO</h3>
+
+<p>Temas desenvolvidos segundo boas práticas de SEO ajudam os mecanismos de busca a compreender e organizar o conteúdo da loja.</p>
+
+<p>Isso inclui URLs amigáveis, utilização adequada de títulos e subtítulos, carregamento eficiente, código bem estruturado e boa experiência em dispositivos móveis.</p>
+
+<p>O tema também deve apresentar corretamente informações como nome do café, descrição, preço, disponibilidade, origem, imagens e avaliações.</p>
+
+<p>Uma estrutura organizada facilita a criação de páginas para pesquisas como “café especial em grãos”, “café para prensa francesa”, “café com notas de chocolate” ou “assinatura mensal de café”.</p>
+
+<p>O tema, porém, não garante resultados sozinho. A loja precisa de descrições originais, categorias bem planejadas, imagens otimizadas e conteúdos relevantes sobre preparo, moagem, origem e conservação.</p>
+
+<h3 id="suporte-e-atualizacoes">Suporte e atualizações</h3>
+
+<p>Ter acesso a suporte técnico e atualizações regulares facilita a resolução de dúvidas e a realização de ajustes ao longo do tempo.</p>
+
+<p>Temas atualizados tendem a acompanhar mudanças na plataforma, corrigir falhas e manter a loja funcionando com maior estabilidade.</p>
+
+<p>Antes de escolher, verifique quem desenvolveu o tema, quais canais de atendimento estão disponíveis e por quanto tempo o suporte é oferecido.</p>
+
+<p>Também vale consultar avaliações e informações sobre a frequência das atualizações.</p>
+
+<p>Um tema abandonado pode deixar de funcionar corretamente após mudanças na plataforma, nos aplicativos de assinatura, nos meios de pagamento ou em outros recursos essenciais.</p>
+
+<h2 id="temas-por-plataforma">Temas para lojas de cafés por plataforma</h2>
+
+<p>Escolher um tema alinhado à plataforma, ao tamanho do catálogo e ao modelo de venda pode facilitar a navegação e melhorar a apresentação dos cafés.</p>
+
+<p>Uma loja focada em microlotes possui necessidades diferentes de um empório com dezenas de marcas ou de uma cafeteria que vende bebidas, alimentos e produtos para retirada.</p>
+
+<p>Antes de instalar qualquer opção, visualize a demonstração, confira os recursos disponíveis e teste as páginas de produto, assinatura, carrinho e finalização da compra.</p>
+
+<p>Também é importante observar como o tema apresenta variações de peso, moagem, frequência de entrega e outros detalhes específicos do segmento.</p>
+
+<h3 id="temas-para-loja-integrada">Temas para Loja Integrada</h3>
+
+<p>A Loja Integrada permite desenvolver operações de diferentes tamanhos, desde pequenas torrefações até empórios com catálogos mais amplos e variados.</p>
+
+<p>Ao pesquisar por <a href="https://modelaweb.fwscart.com/page/temas-para-loja-integrada" target="_blank">temas para Loja Integrada</a>, é possível encontrar opções disponibilizadas no ecossistema da plataforma e modelos desenvolvidos por parceiros, que podem ser adaptados às necessidades e à identidade visual de cada negócio.</p>
+
+<p>Os exemplos a seguir apresentam temas que podem servir de referência para a escolha e a personalização de uma loja virtual especializada em cafés.</p>
+
+
+<h4 id="torra-artesanal">Torra Artesanal</h4>
+
+<p>O tema Torra Artesanal é indicado para pequenas torrefações que desejam destacar cafés frescos, produção em pequenos lotes e proximidade com os produtores.</p>
+
+<p>A página inicial pode utilizar fotografias amplas, textos sobre o processo de torra e vitrines dedicadas aos cafés recém-torrados.</p>
+
+<p>Nas páginas de produto, o destaque deve estar nas notas sensoriais, na origem, na data de torra e nas recomendações de preparo.</p>
+
+<p>Esse tema é adequado para marcas que desejam transmitir cuidado, autenticidade e conhecimento técnico.</p>
+
+<h4 id="clube-do-cafe">Clube do Café</h4>
+
+<p>O tema Clube do Café é direcionado a negócios que trabalham com assinaturas mensais ou recorrentes.</p>
+
+<p>As páginas devem apresentar os planos de maneira clara, explicando quantidade, frequência, perfil dos cafés, benefícios e condições de cancelamento.</p>
+
+<p>Também é interessante incluir comparativos entre planos, depoimentos de assinantes e exemplos de caixas enviadas anteriormente.</p>
+
+<p>Chamadas para assinatura, renovação e compra para presente devem receber destaque sem dificultar a aquisição de produtos avulsos.</p>
+
+<h4 id="microlotes-premium">Microlotes Premium</h4>
+
+<p>O tema Microlotes Premium é voltado para cafés raros, premiados ou disponíveis em quantidades limitadas.</p>
+
+<p>Um layout minimalista, com espaços amplos e fotografias detalhadas, pode ajudar a transmitir exclusividade.</p>
+
+<p>O tema pode incluir seções para contar a história da fazenda, apresentar o produtor e explicar o processo de beneficiamento.</p>
+
+<p>É uma opção para marcas que trabalham com produtos de maior valor agregado e desejam criar uma experiência de compra mais editorial.</p>
+
+<h4 id="cafeteria-e-padaria">Cafeteria e Padaria</h4>
+
+<p>O tema Cafeteria e Padaria é indicado para estabelecimentos que comercializam cafés, bebidas, pães, doces, salgados e combos para entrega ou retirada.</p>
+
+<p>A organização da loja deve facilitar a localização dos produtos e permitir a criação de categorias como bebidas quentes, bebidas geladas, brunch, sobremesas e kits.</p>
+
+<p>Informações sobre horário de funcionamento, área de entrega, opções de retirada e prazo de preparo devem permanecer visíveis.</p>
+
+<p>Também é importante que o catálogo funcione bem em dispositivos móveis, já que muitos pedidos são realizados pelo celular.</p>
+
+<h4 id="emporio-de-cafes">Empório de Cafés</h4>
+
+<p>O tema Empório de Cafés é adequado para lojas que comercializam diferentes marcas, origens, cápsulas, cafés solúveis, xaropes, chocolates e acompanhamentos.</p>
+
+<p>A estrutura deve contar com busca eficiente, filtros e menus completos para organizar a variedade de itens.</p>
+
+<p>Vitrines de marcas, ofertas, lançamentos e produtos mais vendidos podem ajudar o consumidor a explorar o catálogo.</p>
+
+<p>Esse tema também pode incluir páginas de comparação e recomendações de produtos baseadas no método de preparo.</p>
+
+<h4 id="cafe-corporativo">Café Corporativo</h4>
+
+<p>O tema Café Corporativo é voltado para empresas que fornecem café para escritórios, hotéis, restaurantes e outros estabelecimentos.</p>
+
+<p>A loja pode apresentar pacotes por volume, planos de reposição, locação de máquinas e soluções personalizadas.</p>
+
+<p>Formulários de orçamento e canais de contato comercial devem receber destaque.</p>
+
+<p>Também é interessante incluir informações sobre capacidade de atendimento, frequência de entrega e suporte oferecido aos clientes empresariais.</p>
+
+<h4 id="universo-barista">Universo Barista</h4>
+
+<p>O tema Universo Barista combina a venda de cafés com acessórios e equipamentos de preparo.</p>
+
+<p>O catálogo pode incluir moedores, balanças, chaleiras, filtros, prensas, máquinas, xícaras e produtos de limpeza.</p>
+
+<p>Menus organizados por método ajudam o consumidor a encontrar todos os itens necessários para espresso, V60, prensa francesa, Aeropress ou Moka.</p>
+
+<p>Guias de compra e conteúdos educativos podem ser integrados à loja para auxiliar tanto iniciantes quanto consumidores mais experientes.</p>
+
+
+<h3 id="temas-para-shopify">Temas para Shopify</h3>
+
+<p>A Shopify possui temas com diferentes propostas visuais e níveis de personalização.</p>
+
+<p>Para o segmento de cafés, é importante considerar a quantidade de produtos, a necessidade de assinaturas, o uso de conteúdos editoriais e a apresentação de informações sensoriais.</p>
+
+<p>Alguns modelos funcionam melhor para catálogos pequenos e visuais, enquanto outros favorecem operações com muitas categorias e campanhas frequentes.</p>
+
+<h4 id="shopify-dawn">Dawn</h4>
+
+<p>O Dawn possui uma estrutura minimalista que coloca as imagens dos produtos no centro da experiência.</p>
+
+<p>Ele pode ser utilizado por torrefações que trabalham com um catálogo enxuto de cafés especiais, kits e acessórios selecionados.</p>
+
+<p>Imagens amplas ajudam a valorizar embalagens, grãos, métodos de preparo e a bebida pronta.</p>
+
+<p>Sua base neutra também permite adaptar cores, vitrines e conteúdos à identidade da marca.</p>
+
+<h4 id="shopify-craft">Craft</h4>
+
+<p>O Craft favorece produtos artesanais e marcas que possuem uma história de produção diferenciada.</p>
+
+<p>Sua proposta combina espaços amplos, tipografia elegante e seções voltadas para narrativas.</p>
+
+<p>Em uma loja de cafés, pode ser utilizado para apresentar produtores, fazendas, variedades, processos e práticas de sustentabilidade.</p>
+
+<p>É uma opção interessante para torrefações que desejam vender o produto e, ao mesmo tempo, comunicar sua origem e seu processo de produção.</p>
+
+<h4 id="shopify-refresh">Refresh</h4>
+
+<p>O Refresh oferece uma estrutura adequada para produtos que exigem explicações mais completas.</p>
+
+<p>Ele pode ser adaptado para cafés funcionais, blends, bebidas prontas, descafeinados ou produtos que possuam ingredientes adicionais.</p>
+
+<p>Seções de benefícios, composição, modo de preparo, perguntas frequentes e avaliações ajudam o consumidor a compreender a proposta de cada item.</p>
+
+<p>O tema também pode ser utilizado para destacar diferenciais como produção orgânica, comércio justo ou embalagens sustentáveis.</p>
+
+<h4 id="shopify-sense">Sense</h4>
+
+<p>O Sense apresenta uma estética leve, acolhedora e contemporânea.</p>
+
+<p>É uma alternativa para marcas de cold brew, cafés aromatizados, bebidas geladas e produtos direcionados a um público mais jovem.</p>
+
+<p>Cores, vídeos, depoimentos e conteúdos de estilo de vida podem ser utilizados para criar uma comunicação mais descontraída.</p>
+
+<p>A estrutura também favorece a apresentação de diferentes formas de consumo e ocasiões de uso.</p>
+
+<h4 id="shopify-horizon">Horizon</h4>
+
+<p>O Horizon oferece uma estrutura moderna e flexível, adequada para lojas que desejam combinar produtos avulsos, kits e assinaturas.</p>
+
+<p>Cartões amplos podem ser utilizados para diferenciar cafés por origem, intensidade ou método de preparo.</p>
+
+<p>O tema também permite criar áreas específicas para lançamentos, seleções sazonais e ofertas para assinantes.</p>
+
+<p>É uma opção para marcas que procuram uma aparência profissional com possibilidade de expansão do catálogo.</p>
+
+<h4 id="shopify-heritage">Heritage</h4>
+
+<p>O Heritage possui uma proposta editorial, indicada para marcas que desejam conectar cafés, produtores e histórias.</p>
+
+<p>Galerias e composições visuais podem mostrar a colheita, o processamento, a torra e o preparo.</p>
+
+<p>É uma opção adequada para torrefações com forte posicionamento de origem, sustentabilidade ou relacionamento direto com fazendas.</p>
+
+<p>A integração entre conteúdo e produto pode aumentar a percepção de valor dos cafés.</p>
+
+<h4 id="shopify-atelier">Atelier</h4>
+
+<p>O Atelier oferece uma experiência visual sofisticada, com grande valorização das fotografias.</p>
+
+<p>Pode ser utilizado por marcas premium, cafeterias conceituais e lojas que trabalham com microlotes, presentes e edições limitadas.</p>
+
+<p>Galerias espaçosas ajudam a destacar embalagens, caixas especiais e detalhes dos produtos.</p>
+
+<p>O tema também favorece conteúdos sobre curadoria, design, produção artesanal e experiências de degustação.</p>
+
+<h3 id="temas-para-nuvemshop">Temas para Nuvemshop</h3>
+
+<p>A Nuvemshop oferece diferentes possibilidades de personalização para lojas de produtos físicos, permitindo adaptar o visual e a organização das páginas às necessidades de cada negócio.</p>
+
+<p>No segmento de cafés, a escolha de um <a href="https://modelaweb.fwscart.com/page/temas-para-nuvemshop" target="_blank">layout nuvemshop</a> adequado ajuda a destacar origens, kits, assinaturas, acessórios e conteúdos educativos de forma clara e atrativa.</p>
+
+<p>A definição do layout deve considerar o tamanho do catálogo, a frequência das campanhas e a quantidade de informações que precisam aparecer na página inicial.</p>
+
+
+<h4 id="nuvemshop-baires">Baires</h4>
+
+<p>O Baires possui uma estrutura criativa, com espaços para combinar textos e imagens.</p>
+
+<p>Pode funcionar bem para cafeterias autorais e torrefações que desejam comunicar uma identidade visual marcante.</p>
+
+<p>Textos amplos podem apresentar a proposta da marca, enquanto imagens destacam cafés, produtores e métodos de preparo.</p>
+
+<p>É uma alternativa para negócios que desejam fugir de uma apresentação comercial mais tradicional.</p>
+
+<h4 id="nuvemshop-recife">Recife</h4>
+
+<p>O Recife pode atender lojas com muitos produtos, categorias e campanhas.</p>
+
+<p>Sua estrutura permite organizar vitrines para cafés em grãos, cafés moídos, cápsulas, kits, acessórios e presentes.</p>
+
+<p>Banners podem destacar lançamentos, promoções, cafés sazonais e condições especiais de entrega.</p>
+
+<p>É uma opção para empórios e operações que precisam apresentar uma variedade maior de itens.</p>
+
+<h4 id="nuvemshop-morelia">Morelia</h4>
+
+<p>O Morelia apresenta um visual limpo e equilibrado, com foco em produtos e imagens.</p>
+
+<p>Módulos de imagem e texto podem ser utilizados para apresentar a história da torrefação, explicar o processo de produção e divulgar depoimentos.</p>
+
+<p>É uma alternativa versátil para lojas de cafés, kits, acessórios e produtos complementares.</p>
+
+<p>Sua estrutura permite equilibrar informações comerciais e conteúdos institucionais.</p>
+
+<h4 id="nuvemshop-ipanema">Ipanema</h4>
+
+<p>O Ipanema oferece maior liberdade para organizar vitrines, banners e diferentes seções da página inicial.</p>
+
+<p>Pode ser adequado para lojas que realizam campanhas frequentes ou trabalham com cafés sazonais.</p>
+
+<p>A ordem dos elementos pode ser ajustada para destacar lançamentos, planos de assinatura, kits para presente e ofertas.</p>
+
+<p>É uma opção para operações que precisam atualizar a comunicação de maneira constante.</p>
+
+<h4 id="nuvemshop-cali">Cali</h4>
+
+<p>O Cali utiliza uma composição visual mais dinâmica e criativa.</p>
+
+<p>Esse estilo pode ser interessante para cafeterias urbanas, marcas jovens e negócios com forte presença nas redes sociais.</p>
+
+<p>Imagens e textos podem contar a história da marca e apresentar diferentes momentos de consumo.</p>
+
+<p>A estrutura também permite destacar cold brews, bebidas prontas, produtos autorais e colaborações especiais.</p>
+
+<h4 id="nuvemshop-rio">Rio</h4>
+
+<p>O Rio possui um visual limpo e adaptável, com destaque para imagens e produtos.</p>
+
+<p>Pode ser utilizado por torrefações, cafeterias e lojas que trabalham com cafés, utensílios e kits.</p>
+
+<p>Diferentes configurações de cabeçalho, busca, banners e vídeos ajudam a adaptar a página às necessidades da marca.</p>
+
+<p>É uma opção versátil para destacar campanhas, produtos mais vendidos e conteúdos sobre preparo.</p>
+
+<h4 id="nuvemshop-amazonas">Amazonas</h4>
+
+<p>O Amazonas é adequado para operações com catálogos grandes e diversas categorias.</p>
+
+<p>A busca e a organização dos produtos podem facilitar a navegação por origens, marcas, métodos, intensidades e tipos de moagem.</p>
+
+<p>É uma alternativa para empórios, distribuidores e lojas que comercializam cafés, máquinas, cápsulas e acessórios.</p>
+
+<p>Sua estrutura ajuda o consumidor a explorar um grande número de itens sem se perder.</p>
+
+<h3 id="temas-para-woocommerce-e-wordpress">Temas para WooCommerce e WordPress</h3>
+
+<p>O WooCommerce pode ser utilizado com diferentes temas do WordPress, permitindo a criação de lojas altamente personalizadas.</p>
+
+<p>Essa flexibilidade pode ser interessante para torrefações que desejam integrar comércio eletrônico, blog, páginas institucionais, cursos e conteúdos sobre café.</p>
+
+<p>Na escolha, é importante avaliar velocidade, compatibilidade com o editor utilizado e funcionamento com plugins de pagamento recorrente, frete, avaliações e personalização de produtos.</p>
+
+<h4 id="woocommerce-storefront">Storefront</h4>
+
+<p>O Storefront possui integração direta com o WooCommerce e oferece uma estrutura enxuta.</p>
+
+<p>Pode ser utilizado como base para uma loja de cafés simples e funcional.</p>
+
+<p>Sua proposta favorece projetos que desejam reduzir problemas de compatibilidade e realizar personalizações gradualmente.</p>
+
+<p>É uma alternativa para pequenos catálogos, vendas de cafés avulsos, kits e acessórios básicos.</p>
+
+<h4 id="woocommerce-astra">Astra</h4>
+
+<p>O Astra é leve e oferece diferentes possibilidades de personalização.</p>
+
+<p>Pode atender desde pequenas torrefações até operações com catálogos mais amplos.</p>
+
+<p>Modelos iniciais e integração com construtores de páginas ajudam a criar vitrines, páginas de origem, guias de preparo e áreas para assinaturas.</p>
+
+<p>Sua flexibilidade permite adaptar o site a diferentes identidades visuais.</p>
+
+<h4 id="woocommerce-oceanwp">OceanWP</h4>
+
+<p>O OceanWP pode ser utilizado em lojas que combinam comércio eletrônico, blog e conteúdo institucional.</p>
+
+<p>Essa característica é útil para marcas que desejam publicar receitas, comparativos, entrevistas com produtores e guias de métodos.</p>
+
+<p>O tema também pode ser adaptado para destacar produtos, promoções e conteúdos educativos na mesma estrutura.</p>
+
+<p>É uma opção para projetos que utilizam conteúdo como parte importante da estratégia de venda.</p>
+
+<h4 id="woocommerce-neve">Neve</h4>
+
+<p>O Neve possui foco em desempenho, simplicidade e experiência de navegação.</p>
+
+<p>Pode ser utilizado por lojas que priorizam velocidade e uma apresentação visual mais objetiva.</p>
+
+<p>Sua estrutura responsiva atende negócios de diferentes tamanhos, incluindo torrefações, cafeterias e clubes de assinatura.</p>
+
+<p>É uma alternativa para marcas que desejam evitar páginas excessivamente pesadas.</p>
+
+<h4 id="woocommerce-kadence">Kadence</h4>
+
+<p>O Kadence combina uma estrutura leve com ferramentas de personalização de cabeçalho, rodapé, cores e fontes.</p>
+
+<p>Esses recursos ajudam a criar uma identidade consistente sem depender exclusivamente de alterações em código.</p>
+
+<p>O tema pode ser utilizado para desenvolver vitrines de cafés, páginas de produtores, planos de assinatura e conteúdos educativos.</p>
+
+<p>É uma alternativa para negócios que desejam maior controle visual.</p>
+
+<h4 id="woocommerce-blocksy">Blocksy</h4>
+
+<p>O Blocksy oferece um design moderno e integração com o editor de blocos do WordPress.</p>
+
+<p>Pode ser utilizado para organizar cafés, acessórios, máquinas e kits em diferentes categorias.</p>
+
+<p>Seus recursos de personalização ajudam a ajustar cabeçalhos, rodapés, cores, tipografia e páginas de produtos.</p>
+
+<p>É uma opção para lojas que pretendem desenvolver a estrutura utilizando blocos e componentes reutilizáveis.</p>
+
+<h4 id="woocommerce-hello-commerce">Hello Commerce</h4>
+
+<p>O Hello Commerce é direcionado a projetos que utilizam Elementor e WooCommerce.</p>
+
+<p>O tema permite personalizar vitrines, páginas de produtos, carrinho e finalização da compra dentro do ambiente do construtor.</p>
+
+<p>Essa liberdade pode ser utilizada para criar páginas detalhadas de cafés, comparativos de planos e experiências de compra personalizadas.</p>
+
+<p>É uma opção indicada para quem já trabalha com Elementor e deseja manter a edição integrada.</p>
+
+<p>A escolha entre essas opções deve considerar não apenas a página inicial, mas também a experiência nas categorias, páginas de produto, assinatura, carrinho e finalização da compra.</p>
+
+<p>O tema mais adequado será aquele que apresentar os cafés com clareza, facilitar a navegação, carregar rapidamente e oferecer os recursos necessários para a operação.</p>
+
+<h2 id="como-personalizar-seu-tema">Como personalizar o tema de uma loja de cafés</h2>
+
+<p>A personalização ajuda a transmitir a identidade da marca e criar uma experiência mais marcante para o visitante.</p>
+
+<p>Alterações no layout, nas cores, nas fontes e nas imagens podem aproximar a loja do posicionamento da cafeteria, torrefação ou empório.</p>
+
+<p>No entanto, a personalização não deve ser feita apenas com base em preferências estéticas.</p>
+
+<p>Cada escolha precisa facilitar a navegação, valorizar os cafés e ajudar o cliente a identificar o produto mais adequado ao seu paladar e ao seu método de preparo.</p>
+
+<h3 id="ajuste-as-cores">Ajuste as cores à identidade da marca</h3>
+
+<p>As cores da loja devem estar alinhadas ao logotipo, às embalagens e aos materiais de comunicação.</p>
+
+<p>Tons terrosos, verdes, beges e marrons são comuns no segmento, mas não precisam ser utilizados por todas as marcas.</p>
+
+<p>Uma cafeteria contemporânea pode trabalhar com cores vibrantes, enquanto uma torrefação premium pode utilizar uma paleta mais sóbria.</p>
+
+<p>O mais importante é manter consistência e contraste suficiente para garantir a leitura.</p>
+
+<h3 id="escolha-fontes-legiveis">Escolha fontes legíveis</h3>
+
+<p>As fontes ajudam a transmitir a personalidade da marca, mas precisam facilitar a leitura das informações.</p>
+
+<p>Títulos podem utilizar uma tipografia mais marcante, enquanto descrições, notas sensoriais, menus e instruções de preparo devem priorizar a clareza.</p>
+
+<p>Evite utilizar muitas famílias tipográficas no mesmo site.</p>
+
+<p>Uma combinação simples para títulos, subtítulos e textos costuma produzir um resultado mais organizado.</p>
+
+<h3 id="utilize-imagens-de-qualidade">Utilize imagens de qualidade</h3>
+
+<p>As imagens são fundamentais para apresentar os cafés e transmitir confiança.</p>
+
+<p>Utilize fotografias com boa iluminação, resolução adequada e um padrão visual consistente.</p>
+
+<p>Além da embalagem, podem ser exibidos os grãos, a bebida pronta, a fazenda, o produtor e diferentes métodos de preparo.</p>
+
+<p>As imagens devem ser otimizadas para não prejudicar o carregamento da loja.</p>
+
+<h3 id="padronize-as-informacoes">Padronize as informações dos cafés</h3>
+
+<p>Todas as páginas de produto devem seguir uma estrutura semelhante.</p>
+
+<p>Defina campos padronizados para origem, região, variedade, processo, altitude, torra, notas sensoriais, pontuação, peso, moagem e métodos recomendados.</p>
+
+<p>Essa padronização facilita a comparação entre produtos e transmite maior profissionalismo.</p>
+
+<p>Também ajuda o consumidor a aprender onde encontrar cada informação.</p>
+
+<h3 id="organize-os-banners">Organize os banners</h3>
+
+<p>Os banners podem divulgar lançamentos, cafés sazonais, assinaturas, kits, descontos e campanhas especiais.</p>
+
+<p>No entanto, o excesso de banners pode competir pela atenção do consumidor.</p>
+
+<p>Defina uma hierarquia clara e destaque apenas as informações mais importantes.</p>
+
+<p>Revise as campanhas regularmente para evitar a exibição de produtos esgotados ou promoções encerradas.</p>
+
+<h3 id="configure-menus-e-categorias">Configure menus e categorias</h3>
+
+<p>Menus bem organizados ajudam o cliente a encontrar os cafés com mais facilidade.</p>
+
+<p>As categorias podem ser estruturadas por formato, origem, perfil sensorial, intensidade, método de preparo ou ocasião.</p>
+
+<p>Evite criar muitas subcategorias ou utilizar termos excessivamente técnicos sem explicação.</p>
+
+<p>Em catálogos maiores, adicione filtros e uma busca eficiente.</p>
+
+<h3 id="destaque-informacoes-importantes">Destaque informações importantes</h3>
+
+<p>Informações sobre data de torra, validade, conservação, tipo de moagem e prazo de entrega devem ficar visíveis.</p>
+
+<p>Também é importante apresentar formas de pagamento, política de troca, canais de atendimento e condições de assinatura.</p>
+
+<p>Benefícios como frete grátis, desconto para assinantes e envio programado podem ser destacados, desde que suas condições sejam explicadas.</p>
+
+<h3 id="integre-aplicativos-e-widgets">Integre aplicativos e widgets com equilíbrio</h3>
+
+<p>Aplicativos podem acrescentar avaliações, recomendações, programas de fidelidade, atendimento, assinaturas e recuperação de carrinho.</p>
+
+<p>Também é possível utilizar questionários para recomendar cafés de acordo com o paladar e o método de preparo do cliente.</p>
+
+<p>No entanto, cada novo recurso pode aumentar o tempo de carregamento.</p>
+
+<p>Utilize apenas ferramentas que contribuam de maneira real para a experiência ou para os resultados do negócio.</p>
+
+<h3 id="mantenha-a-consistencia-visual">Mantenha a consistência visual</h3>
+
+<p>Utilize a mesma paleta, estilo fotográfico, linguagem e padrão de ícones em todas as páginas.</p>
+
+<p>As descrições dos produtos também devem seguir um tom de comunicação consistente.</p>
+
+<p>Uma marca que utiliza linguagem técnica em algumas páginas e excessivamente informal em outras pode transmitir uma imagem pouco organizada.</p>
+
+<p>A consistência fortalece o reconhecimento e facilita a navegação.</p>
+
+<h3 id="evite-o-excesso-de-elementos">Evite o excesso de elementos</h3>
+
+<p>Animações, pop-ups, vídeos automáticos, notificações e banners podem ser úteis, mas precisam ser utilizados com moderação.</p>
+
+<p>O foco principal deve permanecer nos cafés, nas informações necessárias e nas ações que ajudam o cliente a concluir a compra.</p>
+
+<p>Uma página muito carregada pode dificultar a comparação entre produtos e prejudicar a velocidade.</p>
+
+<h2 id="checklist-como-saber-se-o-tema-e-ideal">Checklist: como saber se o tema é ideal?</h2>
+
+<p>Antes de escolher o tema da sua loja virtual de cafés, revise alguns pontos essenciais.</p>
+
+<h3 id="o-tema-e-responsivo">O tema é responsivo?</h3>
+
+<p>Verifique se a loja funciona corretamente em celulares, tablets e computadores.</p>
+
+<p>Observe menus, imagens, filtros, seletores de moagem, opções de peso, carrinho e finalização da compra.</p>
+
+<h3 id="as-paginas-carregam-rapidamente">As páginas carregam rapidamente?</h3>
+
+<p>Teste a velocidade da página inicial, das categorias e das páginas de produto.</p>
+
+<p>As fotografias devem carregar sem provocar demoras excessivas.</p>
+
+<h3 id="o-visual-combina-com-a-identidade-da-marca">O visual combina com a identidade da marca?</h3>
+
+<p>Analise se cores, fontes, espaçamentos e estilo geral podem ser adaptados ao posicionamento do negócio.</p>
+
+<p>O tema deve transmitir a imagem desejada sem exigir alterações complexas.</p>
+
+<h3 id="a-navegacao-e-simples-e-intuitiva">A navegação é simples e intuitiva?</h3>
+
+<p>O cliente deve conseguir localizar cafés, categorias, informações de preparo e canais de atendimento sem dificuldade.</p>
+
+<p>Menus confusos e excesso de elementos podem prejudicar a experiência.</p>
+
+<h3 id="os-cafes-ficam-bem-apresentados">Os cafés ficam bem apresentados?</h3>
+
+<p>Confira a qualidade das vitrines, a organização das imagens, os títulos, os preços e as opções de peso e moagem.</p>
+
+<p>As páginas devem oferecer espaço suficiente para descrições e informações técnicas.</p>
+
+<h3 id="as-informacoes-sensoriais-estao-visiveis">As informações sensoriais estão visíveis?</h3>
+
+<p>Verifique se origem, processo, torra, intensidade, notas sensoriais e métodos recomendados podem ser apresentados de maneira clara.</p>
+
+<p>Esses detalhes ajudam o consumidor a escolher o produto.</p>
+
+<h3 id="o-tema-e-compativel-com-a-plataforma">O tema é compatível com a plataforma?</h3>
+
+<p>Confirme se o tema foi desenvolvido para a plataforma utilizada e se atende aos requisitos técnicos atuais.</p>
+
+<p>Essa compatibilidade reduz o risco de erros e dificuldades de manutenção.</p>
+
+<h3 id="o-tema-funciona-com-os-aplicativos">O tema funciona com os aplicativos utilizados?</h3>
+
+<p>Analise a compatibilidade com pagamentos, frete, avaliações, programas de fidelidade, assinaturas e ferramentas de atendimento.</p>
+
+<p>Teste principalmente os recursos que afetam a compra e a renovação de planos.</p>
+
+<h3 id="existem-opcoes-suficientes-de-personalizacao">Existem opções suficientes de personalização?</h3>
+
+<p>Confira se é possível alterar cores, fontes, banners, menus, vitrines e informações de produto pelo painel.</p>
+
+<p>Temas muito limitados podem dificultar futuras mudanças na identidade da marca.</p>
+
+<h3 id="o-fornecedor-oferece-suporte-tecnico">O fornecedor oferece suporte técnico?</h3>
+
+<p>Verifique os canais de atendimento, o período de suporte e as condições oferecidas pelo desenvolvedor.</p>
+
+<p>Um bom suporte pode ajudar na instalação, configuração e resolução de problemas.</p>
+
+<h3 id="o-tema-recebe-atualizacoes">O tema recebe atualizações?</h3>
+
+<p>Temas atualizados tendem a acompanhar mudanças na plataforma e corrigir falhas.</p>
+
+<p>Consulte a frequência das atualizações e o histórico do desenvolvedor.</p>
+
+<h3 id="a-estrutura-segue-boas-praticas-de-seo">A estrutura segue boas práticas de SEO?</h3>
+
+<p>Observe a organização dos títulos, a velocidade, a responsividade e a apresentação das informações.</p>
+
+<p>Uma estrutura adequada pode ajudar os mecanismos de busca a compreender o catálogo e os conteúdos da loja.</p>
+
+<h3 id="o-tema-atende-ao-tamanho-do-catalogo">O tema atende ao tamanho do catálogo?</h3>
+
+<p>Uma torrefação com poucos cafés possui necessidades diferentes de um empório com centenas de produtos.</p>
+
+<p>O tema deve permitir que o catálogo cresça sem tornar a navegação confusa.</p>
+
+<h3 id="o-processo-de-compra-e-claro">O processo de compra é claro?</h3>
+
+<p>Teste a escolha do café, do peso, da moagem, da quantidade e da frequência de entrega.</p>
+
+<p>O cliente deve compreender cada etapa e concluir o pedido sem dificuldades.</p>
+
+<h3 id="as-informacoes-importantes-estao-visiveis">As informações comerciais estão visíveis?</h3>
+
+<p>Confira se a loja apresenta formas de pagamento, prazo de envio, política de troca, canais de atendimento e condições de assinatura.</p>
+
+<p>Esses elementos contribuem para a confiança e a segurança durante a compra.</p>
+
+<h2 id="conclusao">Conclusão</h2>
+
+<p>Escolher o tema certo contribui para a criação de uma loja virtual de cafés eficiente, atrativa e fácil de utilizar.</p>
+
+<p>Ao considerar aspectos como apresentação dos produtos, responsividade, velocidade, personalização, organização do catálogo, compatibilidade, SEO e suporte, é possível oferecer uma experiência de compra mais fluida.</p>
+
+<p>Um tema adequado não serve apenas para tornar a loja visualmente interessante.</p>
+
+<p>Ele também ajuda a explicar as diferenças entre os cafés, valorizar suas origens, facilitar a escolha do consumidor e fortalecer a identidade da marca.</p>
+
+<p>A decisão deve considerar as necessidades atuais do negócio e suas possibilidades de crescimento.</p>
+
+<p>Uma torrefação que pretende ampliar o catálogo, lançar um clube de assinatura ou começar a vender acessórios precisa de um tema flexível e atualizado.</p>
+
+<p>Antes da escolha definitiva, teste as demonstrações, compare recursos e verifique a experiência em celulares.</p>
+
+<p>Avalie também o funcionamento das páginas mais importantes, incluindo categorias, produtos, planos de assinatura, carrinho e finalização da compra.</p>
+
+<p>Quando o tema oferece uma boa combinação entre aparência, desempenho, conteúdo e facilidade de uso, ele contribui para a percepção de qualidade, para a confiança do consumidor e para o crescimento da loja.</p>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <footer>
+        <div class="container pt-3">
+            <div class="pt-4 pb-4 pt-md-5">
+
+
+                <div class="row">
+                    <div class="col-12 col-md-4 summary">
+                        <div class="pr-0 pr-md-4">
+                            <p class="h6">CoreTemplates</p>
+                            <div class="text-left mt-0 mb-3">
+                                <p class="small d-block">
+
+
+
+
+                                    <br>Todos os direitos reservados
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-3 mb-4 institutional">
+                    </div>
+
+                    <div class="col-6 col-md-3 mb-3 information">
+                        <p class="h6">Informações</p>
+                        <ul class="list-unstyled">
+                            <li><a href="https://coretemplates.github.io/temas-para-loja-integrada">Temas Loja Integrada</a></li>
+                            <li><a href="https://coretemplates.github.io/temas-para-nuvemshop">Temas Nuvemshop</a></li>
+                            <li><a href="https://coretemplates.github.io/temas-para-shopify">Temas Shopify</a></li>
+			    <li><a href="https://coretemplates.github.io/tema-impulse-shopify">Tema Impulse Shopify</a></li>
+			    <li><a href="https://coretemplates.github.io/plataformas-de-ecommerce">Plataformas de E-commerce</a></li>
+			    <li><a href="https://coretemplates.github.io/tema-ella">Tema Ella</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-12 col-md-2 ml-auto mb-3 social-media">
+                        <p class="h6 mb-3">Redes sociais</p>
+                        <ul class="social-media-list list-inline mb-0">
+                        </ul>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        footer a {
+            color: #666;
+        }
+    </style>
+
+    <div class="direitos">
+        <div class="text-center fonte-padrao">
+            
+        </div>
+    </div>
+
+    <style>
+        .direitos,
+        .direitos *,
+        .direitos::before,
+        .direitos::after,
+        .direitos>div,
+        .direitos div,
+        .direitos div a,
+        .direitos strong {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            position: relative !important;
+            z-index: 98 !important;
+            pointer-events: auto !important;
+            height: auto !important;
+            width: auto !important;
+            max-height: none !important;
+            max-width: none !important;
+        }
+    </style>
+
+</body>
+
+</html>
